@@ -1,0 +1,316 @@
+Python 2.7 (r27:82525, Jul  4 2010, 09:01:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> help(help())
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> print
+The ``print`` statement
+***********************
+
+   print_stmt ::= "print" ([expression ("," expression)* [","]]
+                  | ">>" expression [("," expression)+ [","]])
+
+``print`` evaluates each expression in turn and writes the resulting
+object to standard output (see below).  If an object is not a string,
+it is first converted to a string using the rules for string
+conversions.  The (resulting or original) string is then written.  A
+space is written before each object is (converted and) written, unless
+the output system believes it is positioned at the beginning of a
+line.  This is the case (1) when no characters have yet been written
+to standard output, (2) when the last character written to standard
+output is a whitespace character except ``' '``, or (3) when the last
+write operation on standard output was not a ``print`` statement. (In
+some cases it may be functional to write an empty string to standard
+output for this reason.)
+
+Note: Objects which act like file objects but which are not the built-in
+  file objects often do not properly emulate this aspect of the file
+  object's behavior, so it is best not to rely on this.
+
+A ``'\n'`` character is written at the end, unless the ``print``
+statement ends with a comma.  This is the only action if the statement
+contains just the keyword ``print``.
+
+Standard output is defined as the file object named ``stdout`` in the
+built-in module ``sys``.  If no such object exists, or if it does not
+have a ``write()`` method, a ``RuntimeError`` exception is raised.
+
+``print`` also has an extended form, defined by the second portion of
+the syntax described above. This form is sometimes referred to as
+"``print`` chevron." In this form, the first expression after the
+``>>`` must evaluate to a "file-like" object, specifically an object
+that has a ``write()`` method as described above.  With this extended
+form, the subsequent expressions are printed to this file object.  If
+the first expression evaluates to ``None``, then ``sys.stdout`` is
+used as the file for output.
+
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> quit()
+no Python documentation found for 'quit()'
+
+
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+>>> a = 10
+>>> b = 20
+>>> a + b
+30
+>>> a -b
+-10
+>>> a / b
+0
+>>> float(10)
+10.0
+>>> int(10.1)
+10
+>>> 10 % 2
+0
+>>> 10 ** 10
+10000000000L
+>>> 10 + (10 -2)
+18
+>>> bin(10)
+'0b1010'
+>>> int('100')
+100
+>>> int('ram')
+
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    int('ram')
+ValueError: invalid literal for int() with base 10: 'ram'
+>>> bin(1)
+'0b1'
+>>> bin(10 & 7)
+'0b10'
+>>> 10 & 7
+2
+>>> 15 | 16
+31
+>>> 15 ^ 17
+30
+>>> int(1010)
+1010
+>>> int('1010',2)
+10
+>>> int('1010',4)
+68
+>>> 10 << 2
+40
+>>> 21 >> 2
+5
+>>> a = 300
+>>> a = 20
+>>> a is 20
+True
+>>> a == 300
+False
+>>> 10 + 'jatin'
+
+Traceback (most recent call last):
+  File "<pyshell#28>", line 1, in <module>
+    10 + 'jatin'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> 'Jatin' + 'Miglani'
+'JatinMiglani'
+>>> print 'Jatin' + 'Miglani'
+JatinMiglani
+>>> print 'Jatin' + ' Miglani'
+Jatin Miglani
+>>> name = 'Jatin'
+>>> name + repr(10)
+'Jatin10'
+>>> name + `10`
+'Jatin10'
+>>> name + `10` # backtick converts value into the string
+'Jatin10'
+>>> name + repr(10) # repr works same as
+'Jatin10'
+>>> name `'Jatin'`
+SyntaxError: invalid syntax
+>>> name + `'Jatin'`
+"Jatin'Jatin'"
+>>> 
+>>> name + `'Jatin'` # can write string directly inside backticks with single cotes
+"Jatin'Jatin'"
+>>> + # concatinates two objects
+SyntaxError: invalid syntax
+>>> str + str OR int + int
+SyntaxError: invalid syntax
+>>> #before dong + convert object into 'str' or 'int'
+>>> name(0)
+
+Traceback (most recent call last):
+  File "<pyshell#44>", line 1, in <module>
+    name(0)
+TypeError: 'str' object is not callable
+>>> name = 'RAMRAM'
+>>> name(0)
+
+Traceback (most recent call last):
+  File "<pyshell#46>", line 1, in <module>
+    name(0)
+TypeError: 'str' object is not callable
+>>> name
+'RAMRAM'
+>>> name(0)
+
+Traceback (most recent call last):
+  File "<pyshell#48>", line 1, in <module>
+    name(0)
+TypeError: 'str' object is not callable
+>>> name = RAM
+
+Traceback (most recent call last):
+  File "<pyshell#49>", line 1, in <module>
+    name = RAM
+NameError: name 'RAM' is not defined
+>>> name = 'RAMRAM'
+>>> name
+'RAMRAM'
+>>> print name(0)
+
+Traceback (most recent call last):
+  File "<pyshell#52>", line 1, in <module>
+    print name(0)
+TypeError: 'str' object is not callable
+>>> name(1)
+
+Traceback (most recent call last):
+  File "<pyshell#53>", line 1, in <module>
+    name(1)
+TypeError: 'str' object is not callable
+>>> name = 'Jatin'
+>>> name
+'Jatin'
+>>> name(1)
+
+Traceback (most recent call last):
+  File "<pyshell#56>", line 1, in <module>
+    name(1)
+TypeError: 'str' object is not callable
+>>> name(0)
+
+Traceback (most recent call last):
+  File "<pyshell#57>", line 1, in <module>
+    name(0)
+TypeError: 'str' object is not callable
+>>> name[0]
+'J'
+>>> name[-1]
+'n'
+>>> name = 'RAMRAM'
+>>> name
+'RAMRAM'
+>>> name[0]
+'R'
+>>> name[-1]
+'M'
+>>> name[0,1,2]
+
+Traceback (most recent call last):
+  File "<pyshell#64>", line 1, in <module>
+    name[0,1,2]
+TypeError: string indices must be integers, not tuple
+>>> name[0] + name[1] + name[2]
+'RAM'
+>>> name[0] + name[3] + name[-1]
+'RRM'
+>>> name = File "<pyshell#64>", line 1, in <module>
+SyntaxError: invalid syntax
+>>> 
+>>> 
+>>> name[::-1]
+'MARMAR'
+>>> name[::2]
+'RMA'
+>>> string = ''
+>>> string = 'This is a String'
+>>> string[len(string):-4]
+''
+>>> string[len(string)::-4]
+'gt s'
+>>> string[len(string):-1]
+''
+>>> string[6:0]
+''
+>>> string = 'This is a string'
+>>> string[6:0:-1]
+'si sih'
+>>> string = 'This is a string'
+>>> string[6:0:-1] # [START:END:STEP] # [NOTE : -step may be left to right or right to left]
+'si sih'
+>>> string[6:0:-1] # [START:END:STEP] # [NOTE : -step may be left to right or right to left]
+'si sih'
+>>> string
+'This is a string'
+>>> string * 2
+'This is a stringThis is a string'
+>>> string * 2
+'This is a stringThis is a string'
+>>> print '**' ** 10 '\nHello World'\n ** 10
+SyntaxError: invalid syntax
+>>> print '***' * 10
+******************************
+>>> print '***' * 10, print 'RAMRAM', print '***' *10
+SyntaxError: invalid syntax
+>>> print '***' * 10
+******************************
+>>> print '***' * 10, 'Nitin', print '***' * 10
+SyntaxError: invalid syntax
+>>> print '***' * 10, 'Nitin', '***' * 10
+****************************** Nitin ******************************
+>>> name
+'RAMRAM'
+>>> name > 'Jatin'
+True
+>>> name > 'Jatin' # ASCII value comparision (Note : - Here ASCII value of 'R' is greater than 'J')
+True
+>>> name > 'Jatin' # ASCII value comparision (Note : - Here ASCII value of 'R' is greater than 'J'.. hence True)
+True
+>>> print '***' * 10, '\nNitin\n', '***' * 10
+****************************** 
+Nitin
+******************************
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 

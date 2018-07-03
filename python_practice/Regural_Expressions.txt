@@ -1,0 +1,17 @@
+Regular Expression Pattern 
+
+. > match any single occurance
+\. > match itself
+* > match zero or more occurance of previous character
++ > match one or more occurance of previous character
+? > match one or more occurance of previous character
+{} > match min and max occurance of previous character
+[] > match any of the number
+\s > match a space, tab or newline
+\d > match a digit
+\w > match  a number, digit or -
+\b > boundry match
+[^ ] > match none of occurance in character class
+^ > start of string
+$ > end of string
+

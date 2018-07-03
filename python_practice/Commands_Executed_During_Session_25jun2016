@@ -1,0 +1,193 @@
+Python 2.7 (r27:82525, Jul  4 2010, 09:01:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> ================================ RESTART ================================
+>>> 
+Hello World
+>>> ================================ RESTART ================================
+>>> 
+Hello World
+>>> ================================ RESTART ================================
+>>> 
+Hello World
+
+This is a Documentation Intellude
+Standard output is defined as the file object named ``stdout`` in the
+built-in module ``sys``.  If no such object exists, or if it does not
+have a ``write()`` method, a ``RuntimeError`` exception is raised.
+
+
+>>> ================================ RESTART ================================
+>>> 
+Hello World
+
+This is a Documentation Intellude
+Standard output is defined as the file object named ``stdout`` in the
+built-in module ``sys``.  If no such object exists, or if it does not
+have a ``write()`` method, a ``RuntimeError`` exception is raised.
+
+
+>>> ================================ RESTART ================================
+>>> 
+Hello World
+Hello World
+None
+>>> number = 1
+>>> type(number)
+<type 'int'>
+>>> number = 1.2
+>>> type(number)
+<type 'float'>
+>>> 
+>>> number = 'string'
+>>> type(string)
+
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    type(string)
+NameError: name 'string' is not defined
+>>> type(number)
+<type 'str'>
+>>> 
+>>> def fun():
+	"""
+	This is documentation intulede!
+	"""
+
+	
+>>> fun __doc__
+SyntaxError: invalid syntax
+>>> fun(__doc__)
+
+Traceback (most recent call last):
+  File "<pyshell#14>", line 1, in <module>
+    fun(__doc__)
+TypeError: fun() takes no arguments (1 given)
+>>> fun()
+>>> fun()__doc__
+SyntaxError: invalid syntax
+>>> ================================ RESTART ================================
+>>> 
+What is your name: RAM
+Hello Mr. RAM
+What is your age: 12
+Your age is  12
+>>> ================================ RESTART ================================
+>>> 
+
+For input and raw_input functions
+
+What is your name: RAM
+Hello Mr. RAM
+What is your age: 12
+Your age is  12
+>>> ================================ RESTART ================================
+>>> 
+
+For input and raw_input functions
+
+What is your name: RAM
+Hello Mr. RAM
+What is your age: 12
+Your age is  12
+What is your name: RAMRAM
+
+Traceback (most recent call last):
+  File "D:/Jatin Sir Python Training/raw_input_and_input.py", line 13, in <module>
+    a = eval(raw_input('What is your name: '))
+  File "<string>", line 1, in <module>
+NameError: name 'RAMRAM' is not defined
+>>> ================================ RESTART ================================
+>>> 
+
+For input and raw_input functions
+
+What is your name: RAM
+Hello Mr. RAM
+What is your age: 12
+Your age is  12
+What is your name: 12
+Hello Mr. 12
+>>> ================================ RESTART ================================
+>>> 
+
+For input and raw_input functions
+
+Pkease enter any string :RAM
+String is  RAM
+What is your name: 
+
+Traceback (most recent call last):
+  File "D:/Jatin Sir Python Training/raw_input_and_input.py", line 16, in <module>
+    a = eval(raw_input('What is your name: '))
+  File "<string>", line 0
+    
+   ^
+SyntaxError: unexpected EOF while parsing
+>>> names = ['Jatin', 'RAM', 'Vaibhav', 'Vijay']
+>>> names[0]
+'Jatin'
+>>> names = ['Jatin', 'RAM', 'Vaibhav', 'Vijay'] #this is a 'list'
+>>> names = ['Jatin', 'RAM', 'Vaibhav', 'Vijay'] #this is a 'list' It is a muttable
+>>> names[0] = 'Yatin' # Jatin is replaced by Yatin
+>>> print names
+['Yatin', 'RAM', 'Vaibhav', 'Vijay']
+>>> names = ['Jatin', 'RAM', 'Vaibhav', 'Vijay'] #this is a 'list' It is a muttable i.e. you can modify element
+>>> names + names
+['Jatin', 'RAM', 'Vaibhav', 'Vijay', 'Jatin', 'RAM', 'Vaibhav', 'Vijay']
+>>> names[3,0]
+
+Traceback (most recent call last):
+  File "<pyshell#25>", line 1, in <module>
+    names[3,0]
+TypeError: list indices must be integers, not tuple
+>>> names[3:0]
+[]
+>>> names[3:0:-1]
+['Vijay', 'Vaibhav', 'RAM']
+>>> lnames = names
+>>> names[0] = 'RAM'
+>>> print names
+['RAM', 'RAM', 'Vaibhav', 'Vijay']
+>>> print lnames
+['RAM', 'RAM', 'Vaibhav', 'Vijay']
+>>> # as we created another object of 'names' as 'lnames' which pointing same memory location
+>>> # if we create another object of 'lnames'  as 'llnames'  then
+>>> lnames
+['RAM', 'RAM', 'Vaibhav', 'Vijay']
+>>> lnames = names
+>>> lnames == names
+True
+>>> llnames == names
+
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    llnames == names
+NameError: name 'llnames' is not defined
+>>> llnames = lnames
+>>> llnames == names
+True
+>>> llnames = names
+>>> llnames == names
+True
+>>> lnames == names
+True
+>>> llnames == lnames
+True
+>>> # now if we change element in names
+>>> names[0] = 'LAXM'
+>>> names
+['LAXM', 'RAM', 'Vaibhav', 'Vijay']
+>>> lnames
+['LAXM', 'RAM', 'Vaibhav', 'Vijay']
+>>> llnames
+['LAXM', 'RAM', 'Vaibhav', 'Vijay']
+>>> names = ['ram', 'shyam', 'shiv', 'bhargav']
+>>> print names
+['ram', 'shyam', 'shiv', 'bhargav']
+>>> print names[0]
+ram
+>>> print names[1]
+shyam
+>>> print names[-1]
+bhargav
+>>> 

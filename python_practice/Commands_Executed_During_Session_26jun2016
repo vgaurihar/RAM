@@ -1,0 +1,151 @@
+Python 2.7 (r27:82525, Jul  4 2010, 09:01:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> def add():
+	print 'This is the function call'
+
+	
+>>> add()
+This is the function call
+>>> add(1)
+
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    add(1)
+TypeError: add() takes no arguments (1 given)
+>>> def add(number1):
+	print 'This is the function call'
+
+	
+>>> add()
+
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    add()
+TypeError: add() takes exactly 1 argument (0 given)
+>>> add(1,2)
+
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    add(1,2)
+TypeError: add() takes exactly 1 argument (2 given)
+>>> add(1)
+This is the function call
+>>> def greet(name='RAM')
+SyntaxError: invalid syntax
+>>> def greet(name='RAM'):
+	print "Hello Mr.", name
+
+	
+>>> greet(Jatin)
+
+Traceback (most recent call last):
+  File "<pyshell#14>", line 1, in <module>
+    greet(Jatin)
+NameError: name 'Jatin' is not defined
+>>> greet('Jatin')
+Hello Mr. Jatin
+>>> greet('RAM')
+Hello Mr. RAM
+>>> def multiply(x=1, y=3): # defined default value
+	print 'Multiplication '
+
+	
+>>> 
+>>> #In function you can not define a named argument after named argument in both the cases while calling it or while defined it.
+>>> def multiplication(x, y=20, z=10, 1):
+	
+SyntaxError: invalid syntax
+>>> name = 'Jatin'
+>>> def fun():
+	return 1
+        return 2
+
+>>> x = fun()
+>>> print x
+1
+>>> def fun():
+	return 1
+        return 2 # return means break, after first return it will be out of function and will not execute statements after it
+
+>>> x = 5
+>>> def fun():
+	global x #
+
+	
+>>> x = 5 # variable x is defined globally and its value = 5
+>>> def fun():
+	global x # global variable is defined within function and hence whatever will be executed will consider global variable in case
+	x = 6
+
+	
+>>> print fun()
+None
+>>> print fun(x)
+
+Traceback (most recent call last):
+  File "<pyshell#42>", line 1, in <module>
+    print fun(x)
+TypeError: fun() takes no arguments (1 given)
+>>> print fun()
+None
+>>> x = fun()
+>>> print x
+None
+>>> x = 2
+>>> def mul(y):
+	global x
+	print x * y
+
+	
+>>> mul(2)
+4
+>>> def mul(y):
+	global x
+	print x * y # Global variable is defined x = 2
+
+	
+>>> # hence while passing values only pased value of y within function
+>>> def fun(*names):
+	for name in names:
+		print name,
+
+		
+>>> fun('ram', 'shyam', 'vaibhav')
+ram shyam vaibhav
+>>> def fun(*names): # we can define multiple number of arguments with this *. It will be optional
+	for name in names:
+		print name,
+
+		
+>>> # It will print values in touple
+>>> fun()
+>>> print fun()
+None
+>>> fun('ram')
+ram
+>>> def fun(name, *names):# 'name' is a mandatory and *names is optional
+	print names
+
+	
+>>> fun('ram', 'vaibhav')
+('vaibhav',)
+>>> def fun(name, *names):# 'name' is a mandatory and *names is optional
+	print names
+	print name
+
+	
+>>> fun('ram', 'vaibhav')
+('vaibhav',)
+ram
+>>> def fun(**names): # will accept n number of named arguments 
+	print names
+
+	
+>>> fun('age': 35, 'name': 'Jatin')
+SyntaxError: invalid syntax
+>>> fun(age=35, name='Jatin')
+{'age': 35, 'name': 'Jatin'}
+>>> # It will print values in dictionary form
+>>> # * - accept unnamed n number of arguments and ** - accept named n number of arguments
+>>> # * - will print values in touple (which is immutable) and ** - will print values in dictionary (which is mutable)
+>>> 
