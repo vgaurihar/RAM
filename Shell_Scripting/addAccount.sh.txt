@@ -1,0 +1,32 @@
+#!/bin/sh -xe
+
+# Maintainer: Lloyd Chang <lchang@proteusdh.com>
+
+sudoAccount=lchang
+addAccount=watson
+
+# https://admin.opsourcecloud.net/cloudui/app/clouds.htm
+# https://proteusdh.assembla.com/spaces/lifenote/tickets/2522-audits--networks--ip-addresses--and-host-descriptions
+for ipAddress in \
+  10.229.123.11 \
+  10.229.123.12 \
+  ; do
+  ssh-copy-id $sudoAccount@$ipAddress
+  export distro=$(ssh -t $sudoAccount@$ipAddress cat /etc/issue | head -1 | cut -d' ' -f1)
+  case $distro in
+    Red )
+      sudoGroup=wheel ;;
+    Ubuntu )
+      sudoGroup=sudo ;;
+  esac
+#  if [ "" == "$(ssh -t root@$ipAddress -o "StrictHostKeyChecking no" grep ^%wheel /etc/sudoers)" ]; then
+#    echo ERROR: Fix by manually visudo /etc/sudoers on $ipAddress
+#    exit 1
+#  fi
+  alreadyExist=$(ssh -t $sudoAccount@$ipAddress grep $addAccount /etc/passwd) || /usr/bin/true
+  if [ "$alreadyExist" == "" ]; then
+    ssh -t $sudoAccount@$ipAddress sudo /usr/sbin/useradd --shell /bin/bash --home-dir /home/$addAccount --create-home --groups adm,$sudoGroup $addAccount
+    ssh -t $sudoAccount@$ipAddress sudo /usr/bin/passwd $addAccount
+    # ssh -t $sudoAccount@$ipAddress sudo /usr/bin/chage -d 0 $addAccount
+  fi
+done
